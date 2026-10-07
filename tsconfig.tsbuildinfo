@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/mockapi.ts","./src/outbox.ts","./src/types.ts","./src/screens/diagnoseform.tsx","./src/screens/outboxscreen.tsx","./src/screens/resultscreen.tsx"],"version":"5.9.3"}

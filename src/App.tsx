@@ -77,6 +77,15 @@ export default function App() {
 
   return (
     <div className="phone-frame">
+      {/* App header */}
+      <div className="app-header">
+        <div className="app-header-logo">🌾</div>
+        <div>
+          <div className="app-header-title">Super Krishak</div>
+          <div className="app-header-sub">Krishi Doctor — Crop Disease AI</div>
+        </div>
+      </div>
+
       {/* Demo controls — not part of the farmer UI */}
       <div className="demo-bar">
         <label className="toggle">
@@ -91,7 +100,7 @@ export default function App() {
       </div>
 
       {!online && (
-        <div className="offline-banner">⚠ No internet connection — {queuedCount} diagnosis{queuedCount === 1 ? '' : 'es'} waiting to send</div>
+        <div className="offline-banner">📴 No internet — {queuedCount} diagnosis{queuedCount === 1 ? '' : 'es'} waiting to send</div>
       )}
       {toast && <div className="toast">{toast}</div>}
 
@@ -121,9 +130,13 @@ export default function App() {
       )}
 
       <nav className="tab-bar">
-        <button className={screen === 'form' ? 'active' : ''} onClick={() => setScreen('form')}>🌾 Diagnose</button>
+        <button className={screen === 'form' ? 'active' : ''} onClick={() => setScreen('form')}>
+          <span className="tab-icon">🌾</span>
+          Diagnose
+        </button>
         <button className={screen === 'outbox' ? 'active' : ''} onClick={() => setScreen('outbox')}>
-          📤 Outbox{queuedCount > 0 && <span className="badge">{queuedCount}</span>}
+          <span className="tab-icon">📤{queuedCount > 0 && <span className="badge">{queuedCount}</span>}</span>
+          Outbox
         </button>
       </nav>
     </div>
